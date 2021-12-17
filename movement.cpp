@@ -1,14 +1,11 @@
 #include <ncurses.h>
-#include "calc.h"
-#include "move_rule.h"
-#include "piece_man.h"
-#include "general.h"
 #include "main.h"
 #include "init_colours.h"
+#include "move_piece.h"
+#include "general.h"
 
 void movement();
 void ask_cordinates(int y, int x, char* cord);
-void move_piece(char from[], char to[]);
 
 void movement() {
     char to[3];
@@ -25,10 +22,6 @@ void movement() {
         ask_cordinates(6, 1, to);
 
         move_piece(from, to);
-
-        write_input(8, 1, "The piece at this position is %c %c ",
-                    map[y_cord(from) - 1][x_cord(from) - 1][0],
-                    map[y_cord(from) - 1][x_cord(from) - 1][1]);
 
         write_input(9, 1, "Press enter to continue or q to quite");
         char choice[1];
@@ -53,13 +46,3 @@ void ask_cordinates(int y, int x, char* cord) {
     }
 }
 
-void move_piece(char from[], char to[]) {
-    if (check_empty(get_name(from), get_col(from)) ||
-        check_same_col(get_col(from), get_col(to))) {
-        return;
-    }
-    if (check_legal(from, to) == true) {
-        print_piece(y_cord(to), x_cord(to), get_col(from), get_name(from));
-        remove_piece(y_cord(from), x_cord(from));
-    }
-}

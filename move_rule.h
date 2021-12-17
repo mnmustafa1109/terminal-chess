@@ -4,5 +4,5 @@
 
 bool check_empty(char color, char name);
 bool check_same_col(char color1, char color2);
-bool check_legal(char from[],char to[])
+bool check_legal(char from[],char to[]);
 #endif
