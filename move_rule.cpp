@@ -35,6 +35,7 @@ bool check_same_col(char color1, char color2) {
 }
 
 bool check_pawn(char from[], char to[]) {
+    
     wattron(input, COLOR_PAIR(WOR_PAIR));
     write_input(7, 1, "Your piece is a pawn");
     wattroff(input, COLOR_PAIR(WOR_PAIR));
