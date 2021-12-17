@@ -1,0 +1,13 @@
+#include <ncurses.h>
+#ifndef INIT_COLOURS_H    // To make sure you don't declare the function more than once by including the header multiple times.
+#define INIT_COLOURS_H
+extern int WOG_PAIR;
+extern int WOW_PAIR;
+extern int BOG_PAIR;
+extern int BOW_PAIR;
+extern int DGREYBG_PAIR;
+extern int LGREYBG_PAIR;
+extern int WOB_PAIR;
+extern int WOR_PAIR;
+void init_colours();
+#endif
