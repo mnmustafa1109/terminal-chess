@@ -87,8 +87,9 @@ bool check_pawn(char from[], char to[]) {
         write_input(BOTW_PAIR, 7, 1, "Enter q r n or b");
         char choice[1];
         wattron(input, COLOR_PAIR(WOG_PAIR));
-        mvwgetnstr(input, 9, 1,choice, 1);
-        while (choice[0] != 'q' && choice[0] != 'r' && choice[0] != 'n' && choice[0] != 'b' ) {
+        mvwgetnstr(input, 9, 1, choice, 1);
+        while (choice[0] != 'q' && choice[0] != 'r' && choice[0] != 'n' &&
+               choice[0] != 'b') {
             write_input(WOG_PAIR, 9, 1, "   ");
             write_input(WOR_PAIR, 8, 1, "Please enter correct piece");
             wattron(input, COLOR_PAIR(WOG_PAIR));
@@ -97,33 +98,56 @@ bool check_pawn(char from[], char to[]) {
         wattroff(input, COLOR_PAIR(WOG_PAIR));
         map[y_cord(from) - 1][x_cord(from) - 1][1] = choice[0];
     }
-    write_input(WOR_PAIR, 9, 1, "Your piece is a pawn");
     return true;
 }
 
 bool check_king(char from[], char to[]) {
-    write_input(WOR_PAIR, 7, 1, "Your piece is a king");
-    return false;
+    if (abs(y_cord(from)-y_cord(to))>1 ||abs(x_cord(from)-x_cord(to))>1 ){
+        write_input(WOR_PAIR, 7, 1, "Knight can not move in this way");
+        return false;
+    }
+    return true;
 }
 
 bool check_queen(char from[], char to[]) {
-    write_input(WOR_PAIR, 7, 1, "Your piece is a queen");
-    return false;
+    if (!(check_rook(from,to) || check_bishop(from,to))){
+        write_input(WOR_PAIR, 7, 1, "QUEEN can not move in this way");
+        return false;
+    }
+    write_input(WOGN_PAIR, 7, 1, "QUEEN can move in this way   ");
+    return true;
 }
 
 bool check_knight(char from[], char to[]) {
-    write_input(WOR_PAIR, 7, 1, "Your piece is a knight");
-    return false;
+    if (abs(y_cord(from) - y_cord(to)) < 1 ||
+        abs(x_cord(from) - x_cord(to)) < 1 ||
+        abs(y_cord(from) - y_cord(to)) > 2 ||
+        abs(x_cord(from) - x_cord(to)) > 2 ||
+        abs(y_cord(from) - y_cord(to)) == abs(x_cord(from) - x_cord(to))) {
+        write_input(WOR_PAIR, 7, 1, "Knight can not move in this way");
+        return false;
+    }
+    return true;
 }
 
 bool check_bishop(char from[], char to[]) {
-    write_input(WOR_PAIR, 7, 1, "Your piece is a bishop");
-    return false;
+    if (abs(x_cord(from) - x_cord(to)) != abs(y_cord(from) - y_cord(to))) {
+        write_input(WOR_PAIR, 7, 1, "Bishop can not move in this way");
+        return false;
+    }
+    return true;
 }
 
 bool check_rook(char from[], char to[]) {
-    write_input(WOR_PAIR, 7, 1, "Your piece is a rook");
-    return false;
+    if (x_cord(from) != x_cord(to) && y_cord(from) != y_cord(to)) {
+        write_input(WOR_PAIR, 7, 1, "Rook can not move in this way");
+        return false;
+    }
+    if (x_cord(from) == x_cord(to) && y_cord(from) == y_cord(to)) {
+        write_input(WOR_PAIR, 7, 1, "Rook can not move in this way");
+        return false;
+    }
+    return true;
 }
 
 bool check_legal(char from[], char to[]) {
@@ -132,19 +156,19 @@ bool check_legal(char from[], char to[]) {
             return check_pawn(from, to);
             break;
         case 'k':
-            check_king(from, to);
+            return check_king(from, to);
             break;
         case 'q':
-            check_queen(from, to);
+            return check_queen(from, to);
             break;
         case 'b':
-            check_bishop(from, to);
+            return check_bishop(from, to);
             break;
         case 'n':
-            check_knight(from, to);
+            return check_knight(from, to);
             break;
         case 'r':
-            check_rook(from, to);
+            return check_rook(from, to);
             break;
     }
 
