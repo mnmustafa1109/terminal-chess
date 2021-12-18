@@ -40,9 +40,7 @@ void movement() {
         if (check_empty(get_name(from), get_col(from))) {
             continue;
         }
-        if (col_bool(get_col(from)) == current_turn) {
-            current_turn = !current_turn;
-        } else {
+        if (col_bool(get_col(from)) != current_turn) {
             write_input(WOR_PAIR, 7, 1, "Its not your turn");
             continue;
         }
@@ -50,7 +48,9 @@ void movement() {
 
         ask_cordinates(6, 1, to);
 
-        move_piece(from, to);
+        if (move_piece(from, to)) {
+            current_turn = !current_turn;
+        }
     }
 }
 

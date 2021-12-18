@@ -31,7 +31,10 @@ bool check_same_col(char color1, char color2) {
 }
 
 bool check_pawn(char from[], char to[]) {
-    
+    if (y_cord(from) - y_cord(to) >1){
+        write_input(WOR_PAIR,7, 1, "Can not move more than one piece");
+        return false;
+    }
     write_input(WOR_PAIR,7, 1, "Your piece is a pawn");
     return true;
 }
