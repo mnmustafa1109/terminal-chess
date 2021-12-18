@@ -2,6 +2,7 @@
 #include "init_colours.h"
 #include "main.h"
 #include "piece_man.h"
+#include "general.h"
 
 void init_piece();
 void init_board();
@@ -44,18 +45,14 @@ void init_board() {
     }
     wrefresh(board);
     wattroff(board, COLOR_PAIR(WOG_PAIR));
-    wattron(board, COLOR_PAIR(LGREYBG_PAIR));
     for (size_t i = 0; i < 8; i++) {
         const int temp = (i % 2 ? 1 : 0);
         for (size_t j = 0; j < 4; j++) {
             for (size_t k = 1; k < 6; k++) {
-                mvwprintw(board, (i * 5) + k, (j * 20) + (temp * 10) + 2,
-                          "██████████");
+                write_board(LGREYBG_PAIR,(i * 5) + k,(j * 20) + (temp * 10) + 2,"██████████");
             }
         }
     }
-    wrefresh(board);
-    wattroff(board, COLOR_PAIR(LGREYBG_PAIR));
 }
 
 void init_input() {
