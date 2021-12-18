@@ -1,4 +1,5 @@
 #include "main.h"
+#include "init_colours.h"
 
 int x_axis(int x);
 int y_axis(int y);
@@ -29,4 +30,18 @@ char get_col(char pos[]){
 
 char get_name(char pos[]){
     return map[y_cord(pos) - 1][x_cord(pos) - 1][1];
+}
+
+bool col_bool(char col) {
+    if (col == 'w') {
+        return true;
+    } 
+    return false;
+}
+
+int get_turn_col(bool col){
+    if (col == true) {
+        return BOTW_PAIR;
+    }
+   return WOB_PAIR;  
 }

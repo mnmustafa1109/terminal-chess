@@ -59,15 +59,16 @@ void init_board() {
 }
 
 void init_input() {
-    refresh();
-    wattron(input, COLOR_PAIR(WOB_PAIR));
+    wbkgd(input, COLOR_PAIR(DGREYBG_PAIR));
+    wattron(input, COLOR_PAIR(WOG_PAIR));
     box(input, 0, 0);
     wrefresh(input);
-    wattroff(input, COLOR_PAIR(WOB_PAIR));
+    wattroff(input, COLOR_PAIR(WOG_PAIR));
 }
 
 void init_win() {
     init_colours();
+    refresh();
     init_board();
     init_piece();
     init_input();

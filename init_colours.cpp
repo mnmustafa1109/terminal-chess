@@ -7,6 +7,7 @@ int DGREYBG_PAIR=5;
 int LGREYBG_PAIR=6;
 int WOB_PAIR=7;
 int WOR_PAIR=8;
+int BOTW_PAIR=9;
 void init_colours() {
     int DGREY = 1;
     int LGREY = 2;
@@ -18,6 +19,7 @@ void init_colours() {
     init_pair(WOW_PAIR, COLOR_WHITE, LGREY);
     init_pair(BOG_PAIR, COLOR_BLACK, DGREY);
     init_pair(BOW_PAIR, COLOR_BLACK, LGREY);
+    init_pair(BOTW_PAIR, COLOR_BLACK, COLOR_WHITE);
     init_pair(WOB_PAIR, COLOR_WHITE, COLOR_BLACK);
     init_pair(WOR_PAIR, COLOR_WHITE, RED);
     init_pair(LGREYBG_PAIR, LGREY, LGREY);

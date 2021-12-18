@@ -7,4 +7,6 @@ int x_cord(char x[]);
 int y_cord(char y[]);
 char get_col(char pos[]);
 char get_name(char pos[]);
+bool col_bool(char col);
+int get_turn_col(bool col);
 #endif

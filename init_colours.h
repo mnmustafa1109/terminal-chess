@@ -5,6 +5,7 @@ extern int WOG_PAIR;
 extern int WOW_PAIR;
 extern int BOG_PAIR;
 extern int BOW_PAIR;
+extern int BOTW_PAIR;
 extern int DGREYBG_PAIR;
 extern int LGREYBG_PAIR;
 extern int WOB_PAIR;
