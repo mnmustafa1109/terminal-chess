@@ -10,7 +10,7 @@ void movement();
 void ask_cordinates(int y, int x, char* cord);
 
 char refresh_turn() {
-    write_input(WOG_PAIR, 9, 1, "Press enter to continue or q to quite");
+    write_input(WOG_PAIR, 10, 1, "Press enter to continue or q to quite");
     char choice[1];
     wattron(input, COLOR_PAIR(WOG_PAIR));
     mvwgetnstr(input, 11, 1, choice, 1);

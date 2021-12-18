@@ -32,6 +32,8 @@ char get_name(char pos[]){
     return map[y_cord(pos) - 1][x_cord(pos) - 1][1];
 }
 
+
+
 bool col_bool(char col) {
     if (col == 'w') {
         return true;

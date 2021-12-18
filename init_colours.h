@@ -10,5 +10,6 @@ extern int DGREYBG_PAIR;
 extern int LGREYBG_PAIR;
 extern int WOB_PAIR;
 extern int WOR_PAIR;
+extern int WOGN_PAIR;
 void init_colours();
 #endif
