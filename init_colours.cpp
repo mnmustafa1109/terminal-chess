@@ -1,3 +1,8 @@
+/*  Noman Mustafa Mehar
+    PF   PROJECT   2021
+    Section : SE-Q 2021
+    ROll No : 21I -1235 */
+    
 #include <ncurses.h>
 int WOG_PAIR=1;
 int WOW_PAIR=2;

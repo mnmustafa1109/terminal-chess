@@ -1,3 +1,8 @@
+/*  Noman Mustafa Mehar
+    PF   PROJECT   2021
+    Section : SE-Q 2021
+    ROll No : 21I -1235 */
+    
 #ifndef CALC_H  // To make sure you don't declare the function more th
 #define CALC_H
 

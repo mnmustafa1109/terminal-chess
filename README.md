@@ -1,3 +1,8 @@
+<!--  Noman Mustafa Mehar
+      Section : SE-Q 2021
+      PF   PROJECT   2021
+      ROll No : 21I -1235  -->
+
 # Terminal-Chess
 
 A terminal chess

@@ -1,3 +1,8 @@
+/*  Noman Mustafa Mehar
+    PF   PROJECT   2021
+    Section : SE-Q 2021
+    ROll No : 21I -1235 */
+    
 #include <ncurses.h>
 #include "calc.h"
 #include "cmath"

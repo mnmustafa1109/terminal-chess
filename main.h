@@ -1,3 +1,8 @@
+/*  Noman Mustafa Mehar
+    PF   PROJECT   2021
+    Section : SE-Q 2021
+    ROll No : 21I -1235 */
+
 #ifndef MAIN_H
 #define MAIN_H
 #include <ncurses.h>
