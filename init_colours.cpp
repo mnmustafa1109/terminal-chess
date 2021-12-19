@@ -9,6 +9,7 @@ int WOB_PAIR=7;
 int WOR_PAIR=8;
 int BOTW_PAIR=9;
 int WOGN_PAIR=10;
+int TWBG_PAIR=11;
 void init_colours() {
 
     // variable names for my own custom colours
@@ -33,6 +34,7 @@ void init_colours() {
     init_pair(WOR_PAIR, COLOR_WHITE, RED);
     init_pair(WOGN_PAIR, COLOR_WHITE, GREEN);
     init_pair(LGREYBG_PAIR, LGREY, LGREY);
+    init_pair(TWBG_PAIR, COLOR_WHITE, COLOR_WHITE);
     init_pair(DGREYBG_PAIR, DGREY, DGREY);
     
 }

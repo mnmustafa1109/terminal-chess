@@ -6,5 +6,7 @@
 extern  WINDOW* board;
 extern  WINDOW* input;
 extern  WINDOW* info;
+extern  WINDOW* title;
+extern  WINDOW* info_title;
 extern char map[8][8][2];
 #endif

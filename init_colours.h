@@ -10,6 +10,7 @@ extern int BOW_PAIR;
 extern int BOTW_PAIR;
 extern int DGREYBG_PAIR;
 extern int LGREYBG_PAIR;
+extern int TWBG_PAIR;
 extern int WOB_PAIR;
 extern int WOR_PAIR;
 extern int WOGN_PAIR;

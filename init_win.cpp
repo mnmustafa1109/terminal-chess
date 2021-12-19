@@ -84,16 +84,46 @@ void init_info() {
     wattroff(info, COLOR_PAIR(WOG_PAIR));
 }
 
+// initializing the info windows
+void init_title() {
+    // setting background
+    wbkgd(title, COLOR_PAIR(TWBG_PAIR));
+    wattron(title, COLOR_PAIR(BOTW_PAIR));
+    // setting borders
+    box(title, 0, 0);
+    wrefresh(title);
+    write(title,BOTW_PAIR,1,3," CCC    H  H    EEEE     SSS      SSS  ");
+    write(title,BOTW_PAIR,2,3,"C       H  H    E       S        S     ");
+    write(title,BOTW_PAIR,3,3,"C       HHHH    EEE      SSS      SSS  ");
+    write(title,BOTW_PAIR,4,3,"C       H  H    E           S        S ");
+    write(title,BOTW_PAIR,5,3," CCC    H  H    EEEE    SSSS     SSSS  ");
+    wattroff(title, COLOR_PAIR(BOTW_PAIR));
+}
+
+// initializing the info windows
+void init_inft() {
+    // setting background
+    wbkgd(info_title, COLOR_PAIR(TWBG_PAIR));
+    wattron(info_title, COLOR_PAIR(BOTW_PAIR));
+    // setting borders
+    box(info_title, 0, 0);
+    wrefresh(info_title);
+    write(info_title,BOTW_PAIR,1,19,"TITLE");
+    wattroff(info_title, COLOR_PAIR(BOTW_PAIR));
+}
+
 void init_win() {
     // initializing the colours
     init_colours();
     refresh();
 
     // calling function to initialize all three windows
+    init_title();
     init_board();
     init_piece();
     init_input();
     init_info();
+    init_inft();
 
     // giving value null aka '-' to other part of the map
     // where there are no pieces
