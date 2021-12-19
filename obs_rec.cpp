@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include "calc.h"
 #include "cmath"
-#include "general.h"
+#include "write.h"
 #include "init_colours.h"
 #include "main.h"
 
@@ -30,12 +30,12 @@ bool check_straight(char from[], char to[]) {
     for (size_t i = init + 1; i < end; i++) {
         if (cord == 'x') {
             if (map[y_cord(from) - 1][i - 1][0] != '-') {
-                write_input(WOR_PAIR, 7, 1, "Someting on the way");
+                write(input,WOR_PAIR, 7, 1, "Someting on the way");
                 return false;
             }
         } else if (cord == 'y') {
             if (map[i - 1][x_cord(from) - 1][0] != '-') {
-                write_input(WOR_PAIR, 7, 1, "SOmething on the way");
+                write(input,WOR_PAIR, 7, 1, "SOmething on the way");
                 return false;
             }
         }
@@ -63,7 +63,7 @@ bool check_diagnol(char from[], char to[]) {
         size_t x, y;
         for (x = x_init + 1, y = y_init + 1; x < x_end, y < y_end; x++, y++) {
             if (map[y-1][x - 1][0] != '-') {
-                write_input(WOR_PAIR, 7, 1, "Someting on the way");
+                write(input,WOR_PAIR, 7, 1, "Someting on the way");
                 return false;
             }
         }

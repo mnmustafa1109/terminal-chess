@@ -2,13 +2,15 @@
 #include "init_colours.h"
 #include "main.h"
 #include "piece_man.h"
-#include "general.h"
+#include "write.h"
 
 void init_piece();
 void init_board();
 void init_input();
 void init_win();
 
+// initializing all the pieces with their initial postion
+// according to how chess rules are
 void init_piece() {
     print_piece(1, 1, 'b', 'r');
     print_piece(1, 8, 'b', 'r');
@@ -32,11 +34,15 @@ void init_piece() {
     }
 }
 
+// initializing the chess board
 void init_board() {
     refresh();
+    // giving the board background
     wbkgd(board, COLOR_PAIR(DGREYBG_PAIR));
     wattron(board, COLOR_PAIR(WOG_PAIR));
+    // board border
     box(board, 0, 0);
+    // printing the axis on the board
     for (size_t i = 0; i < 8; i++) {
         mvwprintw(board, (i * 5) + 3, 83, "%d", 8 - i);
         mvwprintw(board, (i * 5) + 3, 0, "%d", 8 - i);
@@ -45,43 +51,57 @@ void init_board() {
     }
     wrefresh(board);
     wattroff(board, COLOR_PAIR(WOG_PAIR));
+    // printing the checkboard pattern on the board
     for (size_t i = 0; i < 8; i++) {
         const int temp = (i % 2 ? 1 : 0);
         for (size_t j = 0; j < 4; j++) {
             for (size_t k = 1; k < 6; k++) {
-                write_board(LGREYBG_PAIR,(i * 5) + k,(j * 20) + (temp * 10) + 2,"██████████");
+                write(board,LGREYBG_PAIR,(i * 5) + k,(j * 20) + (temp * 10) + 2,"██████████");
             }
         }
     }
 }
 
+// initializing the input window
 void init_input() {
+    // setting the background
     wbkgd(input, COLOR_PAIR(DGREYBG_PAIR));
     wattron(input, COLOR_PAIR(WOG_PAIR));
+    // setting the boarder
     box(input, 0, 0);
     wrefresh(input);
     wattroff(input, COLOR_PAIR(WOG_PAIR));
 }
 
+// initializing the info windows
 void init_info() {
+    // setting background
     wbkgd(info, COLOR_PAIR(DGREYBG_PAIR));
     wattron(info, COLOR_PAIR(WOG_PAIR));
+    // setting borders
     box(info, 0, 0);
     wrefresh(info);
     wattroff(info, COLOR_PAIR(WOG_PAIR));
 }
 
 void init_win() {
+    // initializing the colours
     init_colours();
     refresh();
+
+    // calling function to initialize all three windows
     init_board();
     init_piece();
     init_input();
     init_info();
+
+    // giving value null aka '-' to other part of the map
+    // where there are no pieces
     for (size_t i = 2; i < 6; i++) {
         for (size_t j = 0; j < 8; j++) {
             map[i][j][0] = '-';
             map[i][j][1] = '-';
         }
     }
+
 }

@@ -4,6 +4,7 @@
 
 #include <iostream>
 using namespace std;
+
 string* return_piece(char p);
 string return_char(char p, bool col);
 

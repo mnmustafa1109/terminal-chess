@@ -13,7 +13,7 @@
                 "calc.cpp",
                 "piece.cpp",
                 "piece_man.cpp",
-                "general.cpp",
+                "write.cpp",
                 "move_rule.cpp",
                 "move_piece.cpp",
                 "movement.cpp",

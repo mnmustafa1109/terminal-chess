@@ -10,42 +10,49 @@ string* pawn();
 string* return_piece(char p);
 string return_char(char p, bool col);
 
+// return queen string array to print
 string* queen() {
     static string queen[5] = {"  █ ██ █  ", "   ████   ", " █  ██  █ ",
                               "  ██████  ", " ████████ "};
     return queen;
 }
 
+// return king string array to print
 string* king() {
     static string king[5] = {" █  ██  █ ", " █ █  █ █ ", " ██ ██ ██ ",
                              "   █  █   ", " ████████ "};
     return king;
 }
 
+// return bishop string array to print
 string* bishop() {
     static string bishop[5] = {"   █ ██   ", "  ███ ██  ", " █████ ██ ",
                                "   ████   ", " ████████ "};
     return bishop;
 }
 
+// return knight string array to print
 string* knight() {
     static string knight[5] = {"    ███   ", "   ██ ██  ", "  █████ █ ",
                                "   ███    ", " ████████ "};
     return knight;
 }
 
+// return rook string array to print
 string* rook() {
     static string rook[5] = {" ████████ ", " █ █  █ █ ", "   ████   ",
                              "  █ ██ █  ", " ████████ "};
     return rook;
 }
 
+// return pawn string array to print
 string* pawn() {
     static string pawn[5] = {"          ", "    ██    ", "  ██████  ",
                              "    ██    ", " ████████ "};
     return pawn;
 }
 
+// return the piece string array depending on the char it given
 string* return_piece(char p) {
     switch (p) {
         case 'q':
@@ -72,6 +79,9 @@ string* return_piece(char p) {
     return queen();
 }
 
+// return the utf-8 char of the chess piece
+// depending on the piece name and the color
+// given wether it is black or white 
 string return_char(char p, bool col) {
     switch (p) {
         case 'q':
@@ -116,6 +126,7 @@ string return_char(char p, bool col) {
                 return "♗";
             }
             break;
+        // return - if no valid piece char is provided    
         default:
             return "-";
             break;
