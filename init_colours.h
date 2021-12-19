@@ -1,6 +1,8 @@
 #include <ncurses.h>
 #ifndef INIT_COLOURS_H    // To make sure you don't declare the function more than once by including the header multiple times.
 #define INIT_COLOURS_H
+
+// making colours name extern so tat any file can access colours
 extern int WOG_PAIR;
 extern int WOW_PAIR;
 extern int BOG_PAIR;
