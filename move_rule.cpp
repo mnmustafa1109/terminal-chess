@@ -4,6 +4,7 @@
 #include "general.h"
 #include "init_colours.h"
 #include "main.h"
+#include "obs_rec.h"
 
 bool check_empty(char color, char name);
 bool check_same_col(char color1, char color2);
@@ -36,12 +37,14 @@ bool check_pawn(char from[], char to[]) {
     static char en_passant[2];
     bool promo;
     int forward;
-    if (first_move == true){
+    if (first_move == true) {
         first_move == false;
-        if (abs(y_cord(en_passant)-y_cord(to))==1 && x_cord(en_passant) == x_cord(to)){
-            if (abs(x_cord(en_passant)-x_cord(from))==1 && y_cord(en_passant) == y_cord(from)){
-            write_input(WOGN_PAIR, 7, 1, "EN PASSANT move ");
-            return true;
+        if (abs(y_cord(en_passant) - y_cord(to)) == 1 &&
+            x_cord(en_passant) == x_cord(to)) {
+            if (abs(x_cord(en_passant) - x_cord(from)) == 1 &&
+                y_cord(en_passant) == y_cord(from)) {
+                write_input(WOGN_PAIR, 7, 1, "EN PASSANT move ");
+                return true;
             }
         }
     }
@@ -109,15 +112,6 @@ bool check_pawn(char from[], char to[]) {
     return true;
 }
 
-bool check_king(char from[], char to[]) {
-    if (abs(y_cord(from) - y_cord(to)) > 1 ||
-        abs(x_cord(from) - x_cord(to)) > 1) {
-        write_input(WOR_PAIR, 7, 1, "Knight can not move in this way");
-        return false;
-    }
-    return true;
-}
-
 bool check_queen(char from[], char to[]) {
     if (!(check_rook(from, to) || check_bishop(from, to))) {
         write_input(WOR_PAIR, 7, 1, "QUEEN can not move in this way");
@@ -159,25 +153,34 @@ bool check_rook(char from[], char to[]) {
     return true;
 }
 
+bool check_king(char from[], char to[]) {
+    if (abs(y_cord(from) - y_cord(to)) > 1 ||
+        abs(x_cord(from) - x_cord(to)) > 1) {
+        write_input(WOR_PAIR, 7, 1, "Knight can not move in this way");
+        return false;
+    }
+    return true;
+}
+
 bool check_legal(char from[], char to[]) {
     switch (get_name(from)) {
         case 'p':
-            return check_pawn(from, to);
+            return check_pawn(from, to) && check_path(from, to);
             break;
         case 'k':
             return check_king(from, to);
             break;
         case 'q':
-            return check_queen(from, to);
+            return check_queen(from, to) && check_path(from, to);
             break;
         case 'b':
-            return check_bishop(from, to);
+            return check_bishop(from, to) && check_path(from, to);
             break;
         case 'n':
             return check_knight(from, to);
             break;
         case 'r':
-            return check_rook(from, to);
+            return check_rook(from, to) && check_path(from, to);
             break;
     }
 
