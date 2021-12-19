@@ -2,7 +2,6 @@
 #define SCORE_H
 // once by including the header multiple times.
 
-int get_wscore();
-int get_bscore();
+int score(char col);
 
 #endif

@@ -55,7 +55,8 @@ void init_board() {
         const int temp = (i % 2 ? 1 : 0);
         for (size_t j = 0; j < 4; j++) {
             for (size_t k = 1; k < 6; k++) {
-                write(board,LGREYBG_PAIR,(i * 5) + k,(j * 20) + (temp * 10) + 2,"██████████");
+                write(board, LGREYBG_PAIR, (i * 5) + k,
+                      (j * 20) + (temp * 10) + 2, "██████████");
             }
         }
     }
@@ -81,6 +82,14 @@ void init_info() {
     box(info, 0, 0);
     wrefresh(info);
     wattroff(info, COLOR_PAIR(WOG_PAIR));
+    write(info, BOTW_PAIR, 7, 24, "                   ");
+    write(info, BOTW_PAIR, 8, 24, "  White Score :    ");
+    write(info, BOTW_PAIR, 9, 24, "                   ");
+    write(info, BOTW_PAIR, 8, 42, " ");
+    write(info, WOB_PAIR, 11, 24, "                   ");
+    write(info, WOB_PAIR, 12, 24, "  Black Score :    ");
+    write(info, WOB_PAIR, 12, 42, " ");
+    write(info, WOB_PAIR, 13, 24, "                   ");
 }
 
 // initializing the info windows
@@ -91,11 +100,11 @@ void init_title() {
     // setting borders
     box(title, 0, 0);
     wrefresh(title);
-    write(title,BOTW_PAIR,1,3," CCC    H  H    EEEE     SSS      SSS  ");
-    write(title,BOTW_PAIR,2,3,"C       H  H    E       S        S     ");
-    write(title,BOTW_PAIR,3,3,"C       HHHH    EEE      SSS      SSS  ");
-    write(title,BOTW_PAIR,4,3,"C       H  H    E           S        S ");
-    write(title,BOTW_PAIR,5,3," CCC    H  H    EEEE    SSSS     SSSS  ");
+    write(title, BOTW_PAIR, 1, 3, " CCC    H  H    EEEE     SSS      SSS  ");
+    write(title, BOTW_PAIR, 2, 3, "C       H  H    E       S        S     ");
+    write(title, BOTW_PAIR, 3, 3, "C       HHHH    EEE      SSS      SSS  ");
+    write(title, BOTW_PAIR, 4, 3, "C       H  H    E           S        S ");
+    write(title, BOTW_PAIR, 5, 3, " CCC    H  H    EEEE    SSSS     SSSS  ");
     wattroff(title, COLOR_PAIR(BOTW_PAIR));
 }
 
@@ -107,7 +116,7 @@ void init_inft() {
     // setting borders
     box(info_title, 0, 0);
     wrefresh(info_title);
-    write(info_title,BOTW_PAIR,1,20,"INFO");
+    write(info_title, BOTW_PAIR, 1, 20, "INFO");
     wattroff(info_title, COLOR_PAIR(BOTW_PAIR));
 }
 
@@ -132,5 +141,4 @@ void init_win() {
             map[i][j][1] = '-';
         }
     }
-
 }
