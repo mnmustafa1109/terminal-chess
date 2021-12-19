@@ -1,11 +1,8 @@
-#include "main.h"
 #include <locale.h>
 #include <ncurses.h>
-#include <iostream>
+#include "main.h"
 #include "init_win.h"
 #include "movement.h"
-
-using namespace std;
 
 WINDOW* board;
 WINDOW* input;
@@ -17,6 +14,7 @@ int main() {
     setlocale(LC_ALL, "");
     initscr(); /* Start curses mode 		  */
     start_color();
+    
     
     const int board_width = 84, board_height = 42;
     board = newwin(board_height, board_width, 0, 0);

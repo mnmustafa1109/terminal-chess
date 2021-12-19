@@ -1,5 +1,4 @@
 #include <ncurses.h>
-#include <iostream>
 #include "calc.h"
 #include "general.h"
 #include "init_colours.h"
@@ -8,7 +7,6 @@
 #include "move_rule.h"
 #include "piece.h"
 
-using namespace std;
 void movement();
 void ask_cordinates(int y, int x, char* cord);
 
