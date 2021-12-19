@@ -39,13 +39,22 @@ void init_piece() {
     }
 }
 
+void init_bkg_brdr(WINDOW* win){
+    // giving the board background
+    wbkgd(win, COLOR_PAIR(DGREYBG_PAIR));
+    wattron(win, COLOR_PAIR(WOG_PAIR));
+    // board border
+    box(win, 0, 0);
+    wrefresh(win);
+    wattroff(win, COLOR_PAIR(WOG_PAIR));
+}
+
 // initializing the chess board
 void init_board() {
-    // giving the board background
-    wbkgd(board, COLOR_PAIR(DGREYBG_PAIR));
+
+    init_bkg_brdr(board);
+
     wattron(board, COLOR_PAIR(WOG_PAIR));
-    // board border
-    box(board, 0, 0);
     // printing the axis on the board
     for (size_t i = 0; i < 8; i++) {
         mvwprintw(board, (i * 5) + 3, 83, "%d", 8 - i);
@@ -69,23 +78,14 @@ void init_board() {
 
 // initializing the input window
 void init_input() {
-    // setting the background
-    wbkgd(input, COLOR_PAIR(DGREYBG_PAIR));
-    wattron(input, COLOR_PAIR(WOG_PAIR));
-    // setting the boarder
-    box(input, 0, 0);
-    wrefresh(input);
-    wattroff(input, COLOR_PAIR(WOG_PAIR));
+    init_bkg_brdr(input);
 }
 
 // initializing the info windows
 void init_info() {
-    // setting background
-    wbkgd(info, COLOR_PAIR(DGREYBG_PAIR));
-    wattron(info, COLOR_PAIR(WOG_PAIR));
-    // setting borders
-    box(info, 0, 0);
-    wrefresh(info);
+
+    init_bkg_brdr(info);
+
     wattroff(info, COLOR_PAIR(WOG_PAIR));
     write(info, BOTW_PAIR, 7, 23, "                    ");
     write(info, BOTW_PAIR, 8, 23, "  White Score :    ");
@@ -133,10 +133,10 @@ void init_win() {
     // calling function to initialize all three windows
     init_title();
     init_board();
-    init_piece();
     init_input();
     init_info();
     init_inft();
+    init_piece();
 
     // giving value null aka '-' to other part of the map
     // where there are no pieces
