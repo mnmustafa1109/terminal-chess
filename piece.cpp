@@ -8,6 +8,7 @@ string* knight();
 string* rook();
 string* pawn();
 string* return_piece(char p);
+char* return_char(char p, bool col);
 
 string* queen() {
     static string queen[5] = {"  █ ██ █  ", "   ████   ", " █  ██  █ ",
@@ -69,4 +70,55 @@ string* return_piece(char p) {
             break;
     }
     return queen();
+}
+
+char* return_char(char p, bool col) {
+    switch (p) {
+        case 'q':
+            if (col == true) {
+                return "♛";
+            } else {
+                return "♕";
+            }
+            break;
+        case 'k':
+            if (col == true) {
+                return "♚";
+            } else {
+                return "♔";
+            }
+            break;
+        case 'b':
+            if (col == true) {
+                return "♝";
+            } else {
+                return "♗";
+            }
+            break;
+        case 'n':
+            if (col == true) {
+                return "♞";
+            } else {
+                return "♘";
+            }
+            break;
+        case 'r':
+            if (col == true) {
+                return "♜";
+            } else {
+                return "♖";
+            }
+            break;
+        case 'p':
+            if (col == true) {
+                return "♝";
+            } else {
+                return "♗";
+            }
+            break;
+        default:
+            return "-";
+            break;
+    }
+    return "-";
 }
