@@ -123,7 +123,7 @@ bool check_queen(char from[], char to[]) {
         write_input(WOR_PAIR, 7, 1, "QUEEN can not move in this way");
         return false;
     }
-    write_input(WOGN_PAIR, 7, 1, "QUEEN can move in this way   ");
+    write_input(WOG_PAIR, 7, 1, "                                  ");
     return true;
 }
 

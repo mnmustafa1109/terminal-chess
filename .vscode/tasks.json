@@ -17,6 +17,7 @@
                 "move_rule.cpp",
                 "move_piece.cpp",
                 "movement.cpp",
+                "obs_rec.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-lncurses"
