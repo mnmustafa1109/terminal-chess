@@ -63,12 +63,21 @@ void init_input() {
     wattroff(input, COLOR_PAIR(WOG_PAIR));
 }
 
+void init_info() {
+    wbkgd(info, COLOR_PAIR(DGREYBG_PAIR));
+    wattron(info, COLOR_PAIR(WOG_PAIR));
+    box(info, 0, 0);
+    wrefresh(info);
+    wattroff(info, COLOR_PAIR(WOG_PAIR));
+}
+
 void init_win() {
     init_colours();
     refresh();
     init_board();
     init_piece();
     init_input();
+    init_info();
     for (size_t i = 2; i < 6; i++) {
         for (size_t j = 0; j < 8; j++) {
             map[i][j][0] = '-';

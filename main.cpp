@@ -9,6 +9,7 @@ using namespace std;
 
 WINDOW* board;
 WINDOW* input;
+WINDOW* info;
 char map[8][8][2];
 
 int main() {
@@ -21,6 +22,8 @@ int main() {
     board = newwin(board_height, board_width, 0, 0);
     const int input_width = 45, input_height = 16;
     input = newwin(input_height, input_width, 0, 86);
+    const int info_width = 45, info_height = 25;
+    info = newwin(info_height, info_width, 17, 86);
 
     init_win();
     movement();

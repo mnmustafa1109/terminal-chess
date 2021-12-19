@@ -4,4 +4,5 @@
 
 void write_input(int col, int y, int x, const char* fmt, ...);
 void write_board(int col, int y, int x, const char* fmt, ...);
+void write_info(int col, int y, int x, const char* fmt, ...);
 #endif
