@@ -36,7 +36,6 @@ void init_piece() {
 
 // initializing the chess board
 void init_board() {
-    refresh();
     // giving the board background
     wbkgd(board, COLOR_PAIR(DGREYBG_PAIR));
     wattron(board, COLOR_PAIR(WOG_PAIR));
@@ -108,7 +107,7 @@ void init_inft() {
     // setting borders
     box(info_title, 0, 0);
     wrefresh(info_title);
-    write(info_title,BOTW_PAIR,1,19,"TITLE");
+    write(info_title,BOTW_PAIR,1,20,"INFO");
     wattroff(info_title, COLOR_PAIR(BOTW_PAIR));
 }
 

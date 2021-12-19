@@ -18,6 +18,7 @@
                 "move_piece.cpp",
                 "movement.cpp",
                 "obs_rec.cpp",
+                "score.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-lncurses"

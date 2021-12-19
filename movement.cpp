@@ -6,6 +6,7 @@
 #include "move_rule.h"
 #include "piece.h"
 #include "write.h"
+#include "score.h"
 
 void movement();
 void ask_cordinates(int y, int x, char* cord);
@@ -34,6 +35,7 @@ void movement() {
     // white for true and black for false
     bool current_turn = true;
     curs_set(1);
+    int turn_ln = 1;
     int turn_no = 1;
     while (1) {
         if (refresh_turn() == 'q') {
@@ -63,18 +65,21 @@ void movement() {
         // if for wether the move was legal and sucessful or not
         if (move_piece(from, to)) {
             // if for reprinting from line 1 if info board become full
-            if (turn_no > 23) {
-                turn_no = 1;
+            if (turn_ln > 23) {
+                turn_ln = 1;
             }
             // writing the currwent move in the info board
-            write(info, WOG_PAIR, turn_no, 4, from);
-            write(info, WOG_PAIR, turn_no, 7, "→");
-            write(info, WOG_PAIR, turn_no, 9, to);
-            write(info, WOG_PAIR, turn_no, 2,
+            write(info, WOG_PAIR, turn_ln,2,to_string(turn_no).c_str());
+            write(info, WOG_PAIR, turn_ln,3,".");
+            write(info, WOG_PAIR, turn_ln, 5,
                   return_char(get_name(to), current_turn).c_str());
+            write(info, WOG_PAIR, turn_ln, 7, from);
+            write(info, WOG_PAIR, turn_ln, 10, "→");
+            write(info, WOG_PAIR, turn_ln, 12, to);
                   // changing the turn colour
             current_turn = !current_turn;
             // making current line increase
+            turn_ln++;
             turn_no++;
         }
     }
