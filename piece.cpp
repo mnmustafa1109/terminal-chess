@@ -8,7 +8,7 @@ string* knight();
 string* rook();
 string* pawn();
 string* return_piece(char p);
-char* return_char(char p, bool col);
+string return_char(char p, bool col);
 
 string* queen() {
     static string queen[5] = {"  █ ██ █  ", "   ████   ", " █  ██  █ ",
@@ -72,7 +72,7 @@ string* return_piece(char p) {
     return queen();
 }
 
-char* return_char(char p, bool col) {
+string return_char(char p, bool col) {
     switch (p) {
         case 'q':
             if (col == true) {

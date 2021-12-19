@@ -5,6 +5,6 @@
 #include <iostream>
 using namespace std;
 string* return_piece(char p);
-char* return_char(char p, bool col);
+string return_char(char p, bool col);
 
 #endif

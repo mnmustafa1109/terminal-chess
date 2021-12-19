@@ -1,5 +1,5 @@
-#include <iostream>
 #include <ncurses.h>
+#include <iostream>
 #include "calc.h"
 #include "general.h"
 #include "init_colours.h"
@@ -30,7 +30,7 @@ void movement() {
     to[2] = from[2] = '\0';
     bool current_turn = true;
     curs_set(1);
-    int turn_no=1;
+    int turn_no = 1;
     while (1) {
         if (refresh_turn() == 'q') {
             break;
@@ -51,13 +51,14 @@ void movement() {
 
         ask_cordinates(6, 1, to);
         if (move_piece(from, to)) {
-            if (turn_no>23){
+            if (turn_no > 23) {
                 turn_no = 1;
             }
-            write_info(WOG_PAIR,turn_no,4,from );
-            write_info(WOG_PAIR,turn_no,7,"→");
-            write_info(WOG_PAIR,turn_no,9,to );
-            write_info(WOG_PAIR,turn_no,2,return_char( get_name(to),current_turn) );
+            write_info(WOG_PAIR, turn_no, 4, from);
+            write_info(WOG_PAIR, turn_no, 7, "→");
+            write_info(WOG_PAIR, turn_no, 9, to);
+            write_info(WOG_PAIR, turn_no, 2,
+                       return_char(get_name(to), current_turn).c_str());
             current_turn = !current_turn;
             turn_no++;
         }
