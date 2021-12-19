@@ -37,7 +37,7 @@ void movement() {
         write_input(get_turn_col(current_turn), 3, 33, "          ");
         write_input(WOG_PAIR, 1, 1, "Which piece do you wanna move");
         ask_cordinates(3, 1, from);
-        if (check_empty(get_name(from), get_col(from))) {
+        if (!check_empty(get_name(from), get_col(from))) {
             continue;
         }
         if (col_bool(get_col(from)) != current_turn) {

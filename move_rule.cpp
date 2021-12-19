@@ -18,17 +18,17 @@ bool check_legal(char from[], char to[]);
 bool check_empty(char color, char name) {
     if (color == '-' || name == '-') {
         write_input(WOR_PAIR, 7, 1, "No piece available at this position");
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }
 
 bool check_same_col(char color1, char color2) {
     if (color1 == color2) {
         write_input(WOR_PAIR, 7, 1, "Can't attack on the same color");
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }
 
 bool check_pawn(char from[], char to[]) {
