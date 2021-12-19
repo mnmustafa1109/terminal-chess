@@ -82,14 +82,14 @@ void init_info() {
     box(info, 0, 0);
     wrefresh(info);
     wattroff(info, COLOR_PAIR(WOG_PAIR));
-    write(info, BOTW_PAIR, 7, 24, "                   ");
-    write(info, BOTW_PAIR, 8, 24, "  White Score :    ");
-    write(info, BOTW_PAIR, 9, 24, "                   ");
-    write(info, BOTW_PAIR, 8, 42, " ");
-    write(info, WOB_PAIR, 11, 24, "                   ");
-    write(info, WOB_PAIR, 12, 24, "  Black Score :    ");
-    write(info, WOB_PAIR, 12, 42, " ");
-    write(info, WOB_PAIR, 13, 24, "                   ");
+    write(info, BOTW_PAIR, 7, 23, "                    ");
+    write(info, BOTW_PAIR, 8, 23, "  White Score :    ");
+    write(info, BOTW_PAIR, 9, 23, "                    ");
+    write(info, WOB_PAIR, 11, 23, "                    ");
+    write(info, WOB_PAIR, 12, 23, "  Black Score :    ");
+    write(info, WOB_PAIR, 13, 23, "                    ");
+    write(info, WOB_PAIR, 12, 41, "  ");
+    write(info, BOTW_PAIR, 8, 41, "  ");
 }
 
 // initializing the info windows

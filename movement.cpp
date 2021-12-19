@@ -76,6 +76,9 @@ void movement() {
             write(info, WOG_PAIR, turn_ln, 7, from);
             write(info, WOG_PAIR, turn_ln, 10, "→");
             write(info, WOG_PAIR, turn_ln, 12, to);
+            // updating the score
+            write(info, WOB_PAIR, 12, 41, "  ");
+            write(info, BOTW_PAIR, 8, 41, "  ");
             write(info, BOTW_PAIR, 8, 41, to_string(score('w')).c_str());
             write(info, WOB_PAIR, 12, 41, to_string(score('b')).c_str());
             // changing the turn colour
