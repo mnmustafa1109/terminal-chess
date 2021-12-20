@@ -36,6 +36,7 @@ Before running make sure your terminal is in full screen mode to avoid cutting o
 - en passont move support
 - pawn promotion move support
 - colored turn banner for ease
+- history of all move played
 
 # Planned Features
 
@@ -45,6 +46,7 @@ Before running make sure your terminal is in full screen mode to avoid cutting o
 - more intelligent score banner
 - arrow key based movement
 - last move highlight
+- outputting history to a text file
 
  # Bugs 
  none ... contact me if you find any
