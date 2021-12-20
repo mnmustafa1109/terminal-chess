@@ -22,7 +22,7 @@ Just run the script run.sh which will compile and run automatically on your term
 
 ## Pre requisite 
 
-Before compiling make sure you have ncurses install if you are on liinux compile 
+Before compiling make sure you have ncurses install if you are on windows. If you are on linux you can compile straight away compile 
 
 ## Sugesstions
 
@@ -47,6 +47,7 @@ Before running make sure your terminal is in full screen mode to avoid cutting o
 - arrow key based movement
 - last move highlight
 - outputting history to a text file
+- intelligent legal move highlight for beginners
 
 ## Bugs 
  none ... contact me if you find any
