@@ -58,37 +58,52 @@ bool check_straight(char from[], char to[]) {
     return true;
 }
 
-// check wehter there is something along the path 
-//  depending if there is any piece in the path or not 
+// check wehter there is something along the path
+//  depending if there is any piece in the path or not
 bool check_diagnol(char from[], char to[]) {
     int x_init, x_end, y_init, y_end;
+    size_t x, y;
+
     // check if its moving diagnoally or not
     if (abs(y_cord(from) - y_cord(to)) == abs(x_cord(from) - x_cord(to))) {
         // check if its moving upward or downward
-        if (y_cord(from) > y_cord(to)) {
-            y_init = y_cord(to);
-            y_end = y_cord(from);
-        } else {
-            y_init = y_cord(from);
-            y_end = y_cord(to);
-        }
-        // check if its moving left or right
-        if (x_cord(from) > x_cord(to)) {
-            x_init = x_cord(to);
-            x_end = x_cord(from);
-        } else {
-            x_init = x_cord(from);
-            x_end = x_cord(to);
-        }
-        size_t x, y;
-        // looping trhought the path and check every block for some piece
-        // making x and y as their inital position and looping until the end position
-        for (x = x_init + 1, y = y_init + 1; x < x_end, y < y_end; x++, y++) {
-            if (map[y - 1][x - 1][0] != '-') {
-                write(input, WOR_PAIR, 7, 1, "Someting on the way");
-                return false;
+        if (y_cord(from) > y_cord(to) && x_cord(from) > x_cord(to)) {
+            for (x = x_cord(to) + 1, y = y_cord(to) + 1;
+                 x < x_cord(from), y < y_cord(from); x++, y++) {
+                if (map[y - 1][x - 1][0] != '-') {
+                    write(input, WOR_PAIR, 7, 1, "Someting on the way");
+                    return false;
+                }
+            }
+        } else if (y_cord(from) < y_cord(to) && x_cord(from) < x_cord(to)) {
+            for (x = x_cord(from) + 1, y = y_cord(from) + 1;
+                 x < x_cord(to), y < y_cord(to); x++, y++) {
+                if (map[y - 1][x - 1][0] != '-') {
+                    write(input, WOR_PAIR, 7, 1, "Someting on the way");
+                    return false;
+                }
+            }
+        } else if (y_cord(from) < y_cord(to) && x_cord(from) > x_cord(to)) {
+            for (x = x_cord(from) + 1, y = y_cord(from) + 1;
+                 x < x_cord(to), y < y_cord(to); x--, y++) {
+                if (map[y - 1][x - 1][0] != '-') {
+                    write(input, WOR_PAIR, 7, 1, "Someting on the way");
+                    return false;
+                }
+            }
+        } else if (y_cord(from) > y_cord(to) && x_cord(from) < x_cord(to)) {
+            for (x = x_cord(from) + 1, y = y_cord(from) + 1;
+                 x < x_cord(to), y < y_cord(to); x++, y--) {
+                if (map[y - 1][x - 1][0] != '-') {
+                    write(input, WOR_PAIR, 7, 1, "Someting on the way");
+                    return false;
+                }
             }
         }
+
+        // looping trhought the path and check every block for some piece
+        // making x and y as their inital position and looping until the end
+        // position
     }
     return true;
 }
