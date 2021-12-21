@@ -2,7 +2,7 @@
     PF   PROJECT   2021
     Section : SE-Q 2021
     ROll No : 21I -1235 */
-    
+
 #include <ncurses.h>
 #include "calc.h"
 #include "init_colours.h"
@@ -74,13 +74,8 @@ void movement() {
                 turn_ln = 1;
             }
             // writing the currwent move in the info board
-            write(info, WOG_PAIR, turn_ln, 2, to_string(turn_no).c_str());
-            write(info, WOG_PAIR, turn_ln, 3, ".");
-            write(info, WOG_PAIR, turn_ln, 5,
-                  return_char(get_name(to), current_turn).c_str());
-            write(info, WOG_PAIR, turn_ln, 7, from);
-            write(info, WOG_PAIR, turn_ln, 10, "→");
-            write(info, WOG_PAIR, turn_ln, 12, to);
+            write(info, WOG_PAIR, turn_ln, 2, "%d. %s %s → %s ", turn_no,
+                  return_char(get_name(to), current_turn).c_str(), from, to);
             // updating the score
             write(info, WOB_PAIR, 12, 41, "  ");
             write(info, BOTW_PAIR, 8, 41, "  ");
