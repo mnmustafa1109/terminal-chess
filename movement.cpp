@@ -42,6 +42,7 @@ void movement() {
     curs_set(1);
     int turn_ln = 1;
     int turn_no = 1;
+    
     while (1) {
         if (refresh_turn() == 'q') {
             break;
@@ -78,19 +79,19 @@ void movement() {
                   return_char(get_name(to), current_turn).c_str(), from, to);
             // updating the score
             if (score('w') > 0) {
-                write(info, BOTW_PAIR, 11, 23, "                    ");
-                write(info, BOTW_PAIR, 12, 23, " WHITE WINNING : +%d ",
+                write(info, BOTW_PAIR, 12, 23, "                    ");
+                write(info, BOTW_PAIR, 13, 23, " WHITE WINNING : +%d ",
                       score('w'));
-                write(info, BOTW_PAIR, 13, 23, "                    ");
+                write(info, BOTW_PAIR, 14, 23, "                    ");
             } else if (score('b') > 0) {
-                write(info, WOB_PAIR, 11, 23, "                    ");
-                write(info, WOB_PAIR, 12, 23, " BLACK WINNING : +%d ",
+                write(info, WOB_PAIR, 12, 23, "                    ");
+                write(info, WOB_PAIR, 13, 23, " BLACK WINNING : +%d ",
                       score('b'));
-                write(info, WOB_PAIR, 13, 23, "                    ");
+                write(info, WOB_PAIR, 14, 23, "                    ");
             } else {
-                write(info, WOW_PAIR, 11, 23, "                    ");
-                write(info, WOW_PAIR, 12, 23, "        DRAW        ");
-                write(info, WOW_PAIR, 13, 23, "                    ");
+                write(info, WOW_PAIR, 12, 23, "                    ");
+                write(info, WOW_PAIR, 13, 23, "        DRAW        ");
+                write(info, WOW_PAIR, 14, 23, "                    ");
             }
             // changing the turn colour
             current_turn = !current_turn;

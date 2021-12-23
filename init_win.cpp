@@ -87,9 +87,9 @@ void init_info() {
     init_bkg_brdr(info);
 
     wattroff(info, COLOR_PAIR(WOG_PAIR));
-    write(info, WOW_PAIR, 11, 23, "                    ");
-    write(info, WOW_PAIR, 12, 23, "        DRAW        ");
-    write(info, WOW_PAIR, 13, 23, "                    ");
+    write(info, WOW_PAIR, 12, 23, "                    ");
+    write(info, WOW_PAIR, 13, 23, "        DRAW        ");
+    write(info, WOW_PAIR, 14, 23, "                    ");
 }
 
 // initializing the info windows
