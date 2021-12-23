@@ -4,7 +4,7 @@
     ROll No : 21I -1235 */
     
 #include <cmath>
-#include "main.h"
+#include "../headers/main.h"
 int get_score(char col) {
     int score = 0;
     for (size_t i = 0; i < 8; i++) {

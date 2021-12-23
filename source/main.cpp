@@ -5,9 +5,9 @@
     
 #include <locale.h>
 #include <ncurses.h>
-#include "main.h"
-#include "init_win.h"
-#include "movement.h"
+#include "../headers/main.h"
+#include "../headers/init_win.h"
+#include "../headers/movement.h"
 
 // declaring board info and input windows
 WINDOW* board;

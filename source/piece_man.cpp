@@ -4,11 +4,11 @@
     ROll No : 21I -1235 */
     
 #include <ncurses.h>
-#include "calc.h"
-#include "write.h"
-#include "init_colours.h"
-#include "main.h"
-#include "piece.h"
+#include "../headers/calc.h"
+#include "../headers/write.h"
+#include "../headers/init_colours.h"
+#include "../headers/main.h"
+#include "../headers/piece.h"
 using namespace std;
 
 void print_piece(int y, int x, char color, char piece);

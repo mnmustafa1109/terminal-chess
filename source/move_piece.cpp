@@ -3,9 +3,9 @@
     Section : SE-Q 2021
     ROll No : 21I -1235 */
     
-#include "calc.h"
-#include "move_rule.h"
-#include "piece_man.h"
+#include "../headers/calc.h"
+#include "../headers/move_rule.h"
+#include "../headers/piece_man.h"
 
 bool move_piece(char from[], char to[]) {
     if (check_legal(from, to) && check_empty(get_name(from), get_col(from)) &&

@@ -4,10 +4,10 @@
     ROll No : 21I -1235 */
 
 #include <ncurses.h>
-#include "init_colours.h"
-#include "main.h"
-#include "piece_man.h"
-#include "write.h"
+#include "../headers/init_colours.h"
+#include "../headers/main.h"
+#include "../headers/piece_man.h"
+#include "../headers/write.h"
 
 void init_piece();
 void init_board();

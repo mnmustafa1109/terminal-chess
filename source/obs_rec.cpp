@@ -4,11 +4,11 @@
     ROll No : 21I -1235 */
     
 #include <ncurses.h>
-#include "calc.h"
-#include "cmath"
-#include "init_colours.h"
-#include "main.h"
-#include "write.h"
+#include <cmath>
+#include "../headers/calc.h"
+#include "../headers/init_colours.h"
+#include "../headers/main.h"
+#include "../headers/write.h"
 
 // check wether there is something in the path
 // if the piece is moving straight or not

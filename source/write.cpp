@@ -4,7 +4,7 @@
     ROll No : 21I -1235 */
     
 #include <ncurses.h>
-#include "main.h"
+#include "../headers/main.h"
 
 // for writing multiple strings ... take the window , the colour pair
 // for printing , the axis and the list of the strings 

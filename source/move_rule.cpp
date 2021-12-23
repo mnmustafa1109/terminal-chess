@@ -5,12 +5,12 @@
     
 #include <ncurses.h>
 #include <cmath>
-#include "calc.h"
-#include "init_colours.h"
-#include "main.h"
-#include "obs_rec.h"
-#include "piece_man.h"
-#include "write.h"
+#include "../headers/calc.h"
+#include "../headers/init_colours.h"
+#include "../headers/main.h"
+#include "../headers/obs_rec.h"
+#include "../headers/piece_man.h"
+#include "../headers/write.h"
 
 bool check_empty(char color, char name);
 bool check_same_col(char color1, char color2);

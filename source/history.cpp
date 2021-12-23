@@ -1,8 +1,8 @@
-#include "calc.h"
-#include "init_colours.h"
-#include "main.h"
-#include "piece.h"
-#include "write.h"
+#include "../headers/main.h"
+#include "../headers/calc.h"
+#include "../headers/init_colours.h"
+#include "../headers/piece.h"
+#include "../headers/write.h"
 #define LOGNAME_FORMAT "%Y%m%d_%H%M%S.txt"
 #define LOGNAME_SIZE 20
 

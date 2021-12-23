@@ -4,15 +4,14 @@
     ROll No : 21I -1235 */
 
 #include <ncurses.h>
-#include "calc.h"
-#include "init_colours.h"
-#include "main.h"
-#include "move_piece.h"
-#include "move_rule.h"
-#include "piece.h"
-#include "score.h"
-#include "write.h"
-#include "history.h"
+#include "../headers/calc.h"
+#include "../headers/init_colours.h"
+#include "../headers/main.h"
+#include "../headers/move_piece.h"
+#include "../headers/move_rule.h"
+#include "../headers/score.h"
+#include "../headers/write.h"
+#include "../headers/history.h"
 
 void movement();
 void ask_cordinates(int y, int x, char* cord);
