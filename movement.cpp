@@ -70,17 +70,28 @@ void movement() {
         // if for wether the move was legal and sucessful or not
         if (move_piece(from, to)) {
             // if for reprinting from line 1 if info board become full
-            if (turn_ln > 23) {
+            if (turn_ln > 22) {
                 turn_ln = 1;
             }
             // writing the currwent move in the info board
             write(info, WOG_PAIR, turn_ln, 2, "%d. %s %s → %s ", turn_no,
                   return_char(get_name(to), current_turn).c_str(), from, to);
             // updating the score
-            write(info, WOB_PAIR, 12, 41, "  ");
-            write(info, BOTW_PAIR, 8, 41, "  ");
-            write(info, BOTW_PAIR, 8, 41, to_string(score('w')).c_str());
-            write(info, WOB_PAIR, 12, 41, to_string(score('b')).c_str());
+            if (score('w') > 0) {
+                write(info, BOTW_PAIR, 11, 23, "                    ");
+                write(info, BOTW_PAIR, 12, 23, " WHITE WINNING : +%d ",
+                      score('w'));
+                write(info, BOTW_PAIR, 13, 23, "                    ");
+            } else if (score('b') > 0) {
+                write(info, WOB_PAIR, 11, 23, "                    ");
+                write(info, WOB_PAIR, 12, 23, " BLACK WINNING : +%d ",
+                      score('b'));
+                write(info, WOB_PAIR, 13, 23, "                    ");
+            } else {
+                write(info, WOW_PAIR, 11, 23, "                    ");
+                write(info, WOW_PAIR, 12, 23, "        DRAW        ");
+                write(info, WOW_PAIR, 13, 23, "                    ");
+            }
             // changing the turn colour
             current_turn = !current_turn;
             // making current line increase
