@@ -19,6 +19,7 @@
                 "movement.cpp",
                 "obs_rec.cpp",
                 "score.cpp",
+                "history.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "-lncurses"

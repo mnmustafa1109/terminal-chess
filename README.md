@@ -37,6 +37,7 @@ Before running make sure your terminal is in full screen mode to avoid cutting o
 - pawn promotion move support
 - colored turn banner for ease
 - history of all move played
+- outputting history to a text file
 
 ## Planned Features
 
@@ -45,7 +46,6 @@ Before running make sure your terminal is in full screen mode to avoid cutting o
 - player timer support
 - arrow key based movement
 - last move highlight
-- outputting history to a text file
 - intelligent legal move highlight for beginners
 
 ## Bugs 
