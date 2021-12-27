@@ -17,25 +17,25 @@ void init_win();
 // initializing all the pieces with their initial postion
 // according to how chess rules are
 void init_piece() {
-    print_piece(1, 1, 'b', 'r');
-    print_piece(1, 8, 'b', 'r');
-    print_piece(1, 3, 'b', 'b');
-    print_piece(1, 6, 'b', 'b');
-    print_piece(1, 2, 'b', 'n');
-    print_piece(1, 7, 'b', 'n');
-    print_piece(1, 4, 'b', 'q');
-    print_piece(1, 5, 'b', 'k');
-    print_piece(8, 1, 'w', 'r');
-    print_piece(8, 8, 'w', 'r');
-    print_piece(8, 3, 'w', 'b');
-    print_piece(8, 6, 'w', 'b');
-    print_piece(8, 2, 'w', 'n');
-    print_piece(8, 7, 'w', 'n');
-    print_piece(8, 4, 'w', 'q');
-    print_piece(8, 5, 'w', 'k');
+    print_piece(1, 1, 'b', 'r','w',1);
+    print_piece(1, 8, 'b', 'r','w',1);
+    print_piece(1, 3, 'b', 'b','w',1);
+    print_piece(1, 6, 'b', 'b','w',1);
+    print_piece(1, 2, 'b', 'n','w',1);
+    print_piece(1, 7, 'b', 'n','w',1);
+    print_piece(1, 4, 'b', 'q','w',1);
+    print_piece(1, 5, 'b', 'k','w',1);
+    print_piece(8, 1, 'w', 'r','w',1);
+    print_piece(8, 8, 'w', 'r','w',1);
+    print_piece(8, 3, 'w', 'b','w',1);
+    print_piece(8, 6, 'w', 'b','w',1);
+    print_piece(8, 2, 'w', 'n','w',1);
+    print_piece(8, 7, 'w', 'n','w',1);
+    print_piece(8, 4, 'w', 'q','w',1);
+    print_piece(8, 5, 'w', 'k','w',1);
     for (size_t i = 1; i < 9; i++) {
-        print_piece(2, i, 'b', 'p');
-        print_piece(7, i, 'w', 'p');
+        print_piece(2, i, 'b', 'p','w',1);
+        print_piece(7, i, 'w', 'p','w',1);
     }
 }
 

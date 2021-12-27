@@ -77,6 +77,8 @@ void movement() {
         // if for wether the move was legal and sucessful or not
         if (move_piece(from, to)) {
             
+            
+
             // if for reprinting from line 1 if info board become full
             if (turn_ln > 22) {
                 turn_ln = 1;

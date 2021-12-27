@@ -38,6 +38,7 @@ Before running make sure your terminal is in full screen mode to avoid cutting o
 - colored turn banner for ease
 - history of all move played
 - outputting history to a text file
+- last move highlight
 
 ## Planned Features
 
@@ -45,7 +46,6 @@ Before running make sure your terminal is in full screen mode to avoid cutting o
 - castling move support
 - player timer support
 - arrow key based movement
-- last move highlight
 - intelligent legal move highlight for beginners
 
 ## Bugs 

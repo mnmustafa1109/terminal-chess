@@ -19,5 +19,11 @@ extern int TWBG_PAIR;
 extern int WOB_PAIR;
 extern int WOR_PAIR;
 extern int WOGN_PAIR;
+extern int WOLY_PAIR;
+extern int WODY_PAIR;
+extern int BODY_PAIR;
+extern int BOLY_PAIR;
+extern int DYBG_PAIR;
+extern int LYBG_PAIR;
 void init_colours();
 #endif

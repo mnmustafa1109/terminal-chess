@@ -61,9 +61,9 @@ bool check_pawn(char from[], char to[]) {
                 write(input, WOGN_PAIR, 7, 1, "EN PASSANT move ");
                 // capturing or aka removing the side piece of the opposite col
                 if (map[y_cord(to) - 2][x_cord(to) - 1][1] == 'p') {
-                    remove_piece(y_cord(to) - 1, x_cord(to));
+                    remove_piece(y_cord(to) - 1, x_cord(to),'w',1);
                 } else if (map[y_cord(to)][x_cord(to) - 1][1] == 'p') {
-                    remove_piece(y_cord(to) + 1, x_cord(to));
+                    remove_piece(y_cord(to) + 1, x_cord(to),'w',1);
                 }
                 return true;
             }
