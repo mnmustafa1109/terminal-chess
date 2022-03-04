@@ -1,7 +1,6 @@
 cd source
-g++ -c *.cpp  -lncurses
-g++ *.o -o terminal-chess -lncurses
+g++ -lncurses -c *.cpp 
+g++ -lncurses *.o -o terminal-chess 
 rm -r *.o
 ./terminal-chess
 cd ..
-
